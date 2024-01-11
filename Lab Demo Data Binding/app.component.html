@@ -1,0 +1,14 @@
+<!-- data binding -->
+<p>{{ title }}</p>
+<input type="text" [value]=clientName/>
+<p [style.color]="myColor">Text color was styled using style binding</p>
+<p [class]="appliedCSS">this time applied the myclass property</p>
+<p [class.blue]="notAppliedCSS"> while this does not</p>
+
+<!-- <button (click)="showData($event)">Do not click here</button>
+<button on-click="showData()">do not Click here </button> -->
+
+<!-- event binding -->
+<h2>Event Binding Cuh</h2>
+<button (click)="clickyMe()">Click Me Cuh</button>
+<p>You have clicked me {{clickCount}} times cuh</p>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<header class="bg-dark py-5" style="background-image: url('https://i.pinimg.com/736x/c0/b2/53/c0b253164c735be7fe728518b538a45f.jpg');">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Our Partners</h1>
+            <p class="lead fw-normal text-white-50 mb-0">The comapnies below are our major Partners</p>
+        </div>
+    </div>
+</header>
+<body class="bg-gray-200 p-6">
+    
+    <main class="mt-6">
+        <table class="table-auto border-collapse border-2 border-gray-500 mx-auto">
+            <tr class="text-center">
+              <th class="border-2 border-gray-400 px-4 py-2">Company</th>
+              <th class="border-2 border-gray-400 px-4 py-2">Image Trademark/Logos</th>
+              <th class="border-2 border-gray-400 px-4 py-2">Sponsorship</th>
+              <th class="border-2 border-gray-400 px-4 py-2">Go to Website</th>
+            </tr>
+            <tr *ngFor="let company of companies" class="text-center">
+              <td class="border-2 border-gray-400 px-4 py-2">{{ company.name }}</td>
+              <td class="border-2 border-gray-400 px-4 py-2"><img src="{{ company.logo }}" alt="{{ company.name }} Logo" width="50" height="50"></td>
+              <td class="border-2 border-gray-400 px-4 py-2">{{ company.sponsorship }}</td>
+              <td class="border-2 border-gray-400 px-4 py-2" style="text-decoration: underline;"><a href="{{ company.website }}">{{ company.name }}</a></td>
+            </tr>
+        </table>
+    </main>
+    <br>
+    
+</body>
+<footer class="py-5 bg-dark">
+    <div class="container px-5"><p class="m-0 text-center text-white">Jeane Claude Maglaqui 2024</p></div>
+</footer>
+</html>

@@ -1,0 +1,30 @@
+<!-- Header-->
+<header class="bg-dark py-5" style="background-image: url('https://img.freepik.com/free-photo/dark-blue-pool-tile-texture-background-ripple-effect_53876-102538.jpg');">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">About the Organization</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Learn how the team and comitee leadership are shaping the world of conferences, get the latest conference news and updates on our blog, and contact us for guidance.</p>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="text-center mt-5">
+        <h1>About</h1>
+        <p class="lead">We believe in transparency, cooperation globally, and the free exchange of talent and ideas. A forum for the sharing of these
+            technical and humanitarian discussions is given for meetings, conferences and other events. We are also committed to creating
+            a secure, constructive and supportive atmosphere for all participants in conferences, activities and meetings who participate in
+            these discussions with us.</p>
+            <div class="text-center"><button class="btn btn-outline-dark mt-auto" (click) = "clickMe()" (click) = "showData($event)">Click here to get a free gift!</button></div><br>
+
+            <p class="text-center" style="font-weight: bold;"> You claimed the gift {{ clickCount }} times.</p><br>
+            <p><span class="big-emoji">{{ gift }}</span></p><br><br>
+            <div class="text-center"><button class="btn btn-outline-dark mt-auto" (click) = "reset()">Reset</button></div><br>
+            Conferences are a part of the legacy of this organization and continue today to be a catalyst for creativity. We are committed to
+            developing strategies that support and expand the conference activities throughout the world.
+        </div>
+</div>
+<br>
+<footer class="py-5 bg-dark">
+    <div class="container px-5"><p class="m-0 text-center text-white">Jeane Claude Maglaqui 2024</p></div>
+</footer>

@@ -1,0 +1,67 @@
+<div class="text-center">
+  <h2 class="text-2xl font-bold mb-4" style="color: red;">Date Pipes</h2>
+  <p class="mb-2">Unformatted: {{ presentDate }}</p>
+  <p class="mb-2">Default Format: {{ presentDate | date:'shortDate' }}</p>
+  <p class="mb-2">Short Date: {{ presentDate | date:'shortDate' }}</p>
+  <p class="mb-2">Medium Date: {{ presentDate | date:'mediumDate' }}</p>
+  <p class="mb-2">Long Date: {{ presentDate | date:'longDate' }}</p>
+
+  <hr class="my-4" />
+
+  <h2 class="text-2xl font-bold mb-4" style="color: red;">Dates with parameters</h2>
+  <p class="mb-2">dd/mm/yy: {{ presentDate | date:'y/MM/d' }}</p>
+
+  <hr class="my-4" />
+
+  <h2 class="text-2xl font-bold mb-4" style="color: red;">Formatting time</h2>
+  <p class="mb-2">Standard time: {{ presentDate | date: 'shortTime' }}</p>
+  <p class="mb-2">Medium Time: {{ presentDate | date: 'mediumDate' }}</p>
+  <p class="mb-2">Long Time: {{ presentDate | date: 'longDate' }}</p>
+
+  <hr class="my-4" />
+
+  <h2 class="text-2xl font-bold mb-4" style="color: red;">Async Pipe</h2>
+  <div class="mb-2"> 
+    Seconds changing in Time: {{ time$ | async | date:'mediumTime' }} 
+  </div>
+
+  <hr class="my-4" />
+
+  <h2 class="text-2xl font-bold mb-4" style="color: red;">Currency Pipe</h2>
+  <p class="mb-2">{{ price | currency:'':true}}</p>
+  <p class="mb-2">{{ price | currency:'INR'}}</p>
+  <h3 class="text-xl font-bold mb-2" style="color: red;">REQUIRED 3: For Figure 5a and 5b, indicate 3 more currency pipes</h3>
+  <p class="mb-2">{{ price | currency:'PHP'}}</p>
+  <p class="mb-2">{{ price | currency:'KRW'}}</p>
+  <p class="mb-2">{{ price | currency:'JPY'}}</p>
+
+  <hr class="my-4" />
+
+  <h2 class="text-2xl font-bold mb-4" style="color: red;">Slice Pipe</h2>
+  <div>
+    <h3 class="text-lg font-bold mb-2">Start index:- {{ Fruits | slice:2 }}</h3>
+    <h4 class="text-lg font-bold mb-2">Start and end index:- {{ Fruits | slice:4 }}</h4>
+    <h5 class="text-lg font-bold mb-2">Negative index:- {{ Fruits | slice:-2 }}</h5>
+    <h6 class="text-lg font-bold mb-2">Negative start and end index:- {{ Fruits | slice:-4:-2 }}</h6>
+  </div>
+
+  <hr class="my-4" />
+
+  <div class="text-center">
+    <h2 class="text-2xl font-bold mb-4" style="color: red;">Decimal Pipe</h2>
+    <p class="mb-2">Apply formatting:- {{ decimalNum1 | number:'1.1' }}</p>
+    <p class="mb-2">Apply formatting:- {{ decimalNum2 | number:'1.1-4' }}</p>
+  </div>
+
+  <hr class="my-4" />
+
+  <h2 class="text-2xl font-bold mb-4" style="color: red;">JSON Pipe</h2>
+  <p class="mb-2">Object: {{ data | json }}</p>
+
+  <hr class="my-4" />
+
+  <h2 class="text-2xl font-bold mb-4" style="color: red;">Percent Pipe</h2>
+  <p class="mb-2">A: {{ a | percent }}</p>
+  <p class="mb-2">B: {{ b | percent: '4.3-5' }}</p>
+  <p class="mb-2">B: {{ b | percent: '4.3-5' : 'fr' }}</p>
+</div>

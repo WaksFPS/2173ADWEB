@@ -25,7 +25,7 @@ export class AppComponent implements OnInit{
   }
 
   data: Object={
-    name:'Maglaqui', age:25, food:'Ramen', 
+    name:'Maglaqui', age:21, food:'Adobo', 
     languages: [
       
         {lname:'JS', level:'Wizard'},
@@ -42,4 +42,3 @@ export class AppComponent implements OnInit{
     }
 
 }
-

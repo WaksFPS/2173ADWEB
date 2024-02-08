@@ -1,67 +1,125 @@
-<div class="text-center">
-  <h2 class="text-2xl font-bold mb-4" style="color: red;">Date Pipes</h2>
-  <p class="mb-2">Unformatted: {{ presentDate }}</p>
-  <p class="mb-2">Default Format: {{ presentDate | date:'shortDate' }}</p>
-  <p class="mb-2">Short Date: {{ presentDate | date:'shortDate' }}</p>
-  <p class="mb-2">Medium Date: {{ presentDate | date:'mediumDate' }}</p>
-  <p class="mb-2">Long Date: {{ presentDate | date:'longDate' }}</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date Pipes and more</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #282c35; 
+      color: #fff;
+      margin: 20px;
+      line-height: 1.6;
+    }
 
-  <hr class="my-4" />
+    h2 {
+      color: #e74c3c;
+      border-bottom: 2px solid #e74c3c; 
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+    }
 
-  <h2 class="text-2xl font-bold mb-4" style="color: red;">Dates with parameters</h2>
-  <p class="mb-2">dd/mm/yy: {{ presentDate | date:'y/MM/d' }}</p>
+    h3 {
+      color: #1abc9c; 
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
 
-  <hr class="my-4" />
+    h4 {
+      color: #e74c3c; 
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
 
-  <h2 class="text-2xl font-bold mb-4" style="color: red;">Formatting time</h2>
-  <p class="mb-2">Standard time: {{ presentDate | date: 'shortTime' }}</p>
-  <p class="mb-2">Medium Time: {{ presentDate | date: 'mediumDate' }}</p>
-  <p class="mb-2">Long Time: {{ presentDate | date: 'longDate' }}</p>
+    h5 {
+      color: #9b59b6;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
 
-  <hr class="my-4" />
+    h6 {
+      color: #f39c12; 
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
 
-  <h2 class="text-2xl font-bold mb-4" style="color: red;">Async Pipe</h2>
-  <div class="mb-2"> 
+  <h2>Date Pipes</h2>
+  <p>Unformatted: {{ presentDate }}</p>
+  <p>Default Format: {{ presentDate | date:'shortDate' }}</p>
+  <p>Short Date: {{ presentDate | date:'shortDate' }}</p>
+  <p>Medium Date: {{ presentDate | date:'mediumDate' }}</p>
+  <p>Long Date: {{ presentDate | date:'longDate' }}</p>
+
+  <hr />
+
+  <h2> Dates with parameters</h2>
+  <p>dd/mm/yy: {{ presentDate | date:'y/MM/d' }}</p>
+
+  <hr />
+
+  <h2>Formatting time</h2>
+  <p>Standard time: {{ presentDate | date: 'shortTime' }}</p>
+  <p>Medium Time: {{ presentDate | date: 'mediumDate' }}</p>
+  <p>Long Time: {{ presentDate | date: 'longDate' }}</p>
+
+  <hr />
+
+  <h2>Async Pipe</h2>
+  <div> 
     Seconds changing in Time: {{ time$ | async | date:'mediumTime' }} 
   </div>
+  <hr />
 
-  <hr class="my-4" />
+  <h2>Currency Pipe</h2>
+  <p>{{ price | currency:'':true}}</p>
+  <p>{{ price | currency:'INR'}}</p>
+  <h3>REQUIRED 3: For Figure 5a and 5b, indicate 3 more currency pipes</h3>
+  <p>{{ price | currency:'PHP'}}</p>
+  <p>{{ price | currency:'KRW'}}</p>
+  <p>{{ price | currency:'JPY'}}</p>
 
-  <h2 class="text-2xl font-bold mb-4" style="color: red;">Currency Pipe</h2>
-  <p class="mb-2">{{ price | currency:'':true}}</p>
-  <p class="mb-2">{{ price | currency:'INR'}}</p>
-  <h3 class="text-xl font-bold mb-2" style="color: red;">REQUIRED 3: For Figure 5a and 5b, indicate 3 more currency pipes</h3>
-  <p class="mb-2">{{ price | currency:'PHP'}}</p>
-  <p class="mb-2">{{ price | currency:'KRW'}}</p>
-  <p class="mb-2">{{ price | currency:'JPY'}}</p>
+  <hr />
 
-  <hr class="my-4" />
-
-  <h2 class="text-2xl font-bold mb-4" style="color: red;">Slice Pipe</h2>
+  <h2>Slice Pipe</h2>
   <div>
-    <h3 class="text-lg font-bold mb-2">Start index:- {{ Fruits | slice:2 }}</h3>
-    <h4 class="text-lg font-bold mb-2">Start and end index:- {{ Fruits | slice:4 }}</h4>
-    <h5 class="text-lg font-bold mb-2">Negative index:- {{ Fruits | slice:-2 }}</h5>
-    <h6 class="text-lg font-bold mb-2">Negative start and end index:- {{ Fruits | slice:-4:-2 }}</h6>
+    <h3>Start index:- {{ Fruits | slice:2 }}</h3>
+    <h4>Start and end index:- {{ Fruits | slice:4 }}</h4>
+    <h5>Negative index:- {{ Fruits | slice:-2 }}</h5>
+    <h6>Negative start and end index:- {{ Fruits | slice:-4:-2 }}</h6>
+
+    <h2>Other Examples</h2>
+    <h3>First and Last index:- {{ Fruits | slice:0:6 }}</h3>
+    <h4>Negative first and last index:- {{ Fruits | slice:-6:-1 }}</h4>
+    <h5>Negative and Positive Index :- {{ Fruits | slice:2:-1 }}</h5>
   </div>
+  <hr />
 
-  <hr class="my-4" />
-
-  <div class="text-center">
-    <h2 class="text-2xl font-bold mb-4" style="color: red;">Decimal Pipe</h2>
-    <p class="mb-2">Apply formatting:- {{ decimalNum1 | number:'1.1' }}</p>
-    <p class="mb-2">Apply formatting:- {{ decimalNum2 | number:'1.1-4' }}</p>
+  <div class="center">
+    <h2>Decimal Pipe</h2>
+    <p>Apply formatting:- {{ decimalNum1 | number:'1.1' }}</p>
+    <p>Apply formatting:- {{ decimalNum2 | number:'1.1-4' }}</p>
+    <h2>Other Examples</h2>
+    <p>Apply formatting:- {{ decimalNum1 | number:'1.1-2' }}</p>
+    <p>Apply formatting:- {{ decimalNum2 | number:'1.1-1' }}</p>
+    <p>Apply formatting:- {{ decimalNum1 | number:'1.1-1' }}</p>
   </div>
+  <hr />
 
-  <hr class="my-4" />
+  <h2>JSON Pipe</h2>
+  <p>Object: {{ data | json }}</p>
+  <hr />
 
-  <h2 class="text-2xl font-bold mb-4" style="color: red;">JSON Pipe</h2>
-  <p class="mb-2">Object: {{ data | json }}</p>
+  <h2>Percent Pipe</h2>
+  <p>A: {{ a | percent }}</p>
 
-  <hr class="my-4" />
+  <!--output '0,134.950%'-->
+  <p>B: {{ b | percent: '4.3-5' }}</p>
 
-  <h2 class="text-2xl font-bold mb-4" style="color: red;">Percent Pipe</h2>
-  <p class="mb-2">A: {{ a | percent }}</p>
-  <p class="mb-2">B: {{ b | percent: '4.3-5' }}</p>
-  <p class="mb-2">B: {{ b | percent: '4.3-5' : 'fr' }}</p>
-</div>
+  <!--output '0 134,950 %'-->
+  <p>B: {{ b | percent: '4.3-5' : 'fr' }}</p>
+  <hr />
+
+</body>
+</html>
